@@ -2,7 +2,7 @@
 
 ### Taferas:
 
-- [ ] Criar um crônometro de 25 minutos
+- [X] Criar um crônometro de 25 minutos
 - [ ] Criar uma interface
 - [ ] Mapear o tempo e 25min depois de começar precisamos dar um aviso que terminou
 - [ ] Exibir visualmente o tempo restante
