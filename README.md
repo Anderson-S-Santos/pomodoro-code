@@ -2,12 +2,12 @@
 
 ### Taferas:
 
-- [X] Criar um crônometro de 25 minutos
-- [X] Criar a parte visual do ativador do crônometro
-- [X] Conectar o ativador do crônometro com a função de criar crônometro
-- [ ] Mapear o tempo e 25min depois de começar precisamos dar um aviso que terminou
+- [X] Criar um cronômetro de 25 minutos
+- [X] Criar a parte visual do ativador do cronômetro
+- [X] Conectar o ativador do crônometro com a função de criar cronômetro
+- [X] Disparar um aviso ao fim do cronômetro
 - [ ] Exibir visualmente o tempo restante
-- [ ] Ter uma outra ativação do crônometro, com 5min, para o intervalo 
+- [ ] Ter uma outra ativação do cronômetro, com 5min, para o intervalo 
 - [ ] Exibir uma contagem de pomodoros
 - [ ] Depois de 4 pomodoros ativar um intervalo longo de 15min
 - [ ] Botão para pausar e retornar ao contador
