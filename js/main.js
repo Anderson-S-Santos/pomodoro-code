@@ -8,8 +8,15 @@ disparador.addEventListener('click', () => {
     setTimeout(() => {
         console.log("Aacbou o Pomodoro!")
         alert("O tempo do Pomodoro acabou! Vá descansar!")
+
+        clearInterval(contador)
     }, tempoPomodoro);
     
+    let contador = setInterval('contadorDeSegundos()', 1000);
 })
+
+function contadorDeSegundos() {
+    console.log('tick')
+}
 
 
