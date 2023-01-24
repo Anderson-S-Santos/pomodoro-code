@@ -1,14 +1,19 @@
-const milissegundosPomodoro = 70000 // Usando 4 segundos para teste. Tempo oficial -> 25x60x1000
+const milissegundosPomodoro = 4000 // Usando 4 segundos para teste. Tempo oficial -> 25x60x1000
+const milissegundosIntervalo = 4000
 const disparador = document.querySelector('#disparador')
 const cronometro = document.querySelector('#cronometro')
-let milissegundosRestantes = milissegundosPomodoro - 1000
+let milissegundosRestantes = 0
 let contador
 
 
 disparador.addEventListener('click', () => {
     console.log('Disparador ativado!')
 
-    console.log('faltam', milissegundosPomodoro/1000)
+    if (disparador.textContent == 'Começar') {
+        milissegundosRestantes = milissegundosPomodoro - 1000
+    } else {
+        milissegundosRestantes = milissegundosIntervalo - 1000
+    }
 
     contador = setInterval('contadorDeSegundos()', 1000);
 })
@@ -19,9 +24,15 @@ function contadorDeSegundos() {
         cronometro.textContent = '00:00'
         console.log("O tempo do Pomodoro acabou! Vá descansar!")
 
+        if (disparador.textContent == "Começar") {
+            disparador.textContent = "Intervalo"
+        } else {
+            disparador.textContent = "Começar"
+        }
+
         clearInterval(contador)
     } else {
-        cronometro.textContent = formatarTempo(milissegundosRestantes/1000)
+        cronometro.textContent = formatarTempo(milissegundosRestantes / 1000)
     }
 
     milissegundosRestantes -= 1000;
@@ -30,6 +41,6 @@ function contadorDeSegundos() {
 function formatarTempo(tempo) {
     const minutos = Math.floor(tempo / 60);
     const segundos = tempo % 60;
-    return (minutos.toString().padStart(2, '0')+":"+segundos.toString().padStart(2, '0'))
+    return (minutos.toString().padStart(2, '0') + ":" + segundos.toString().padStart(2, '0'))
 }
 
