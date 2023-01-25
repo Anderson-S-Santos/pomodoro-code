@@ -1,8 +1,10 @@
 const milissegundosPomodoro = 4000 // Usando 4 segundos para teste. Tempo oficial -> 25x60x1000
-const milissegundosIntervalo = 4000 // Intervalo de 5min = 300000 milissegundos
+const milissegundosIntervaloCurto = 4000 // Intervalo de 5min = 300000 milissegundos
+const milissegundosIntervaloLongo = 900000
 const disparador = document.querySelector('#disparador')
 const cronometro = document.querySelector('#cronometro')
 const marcador = document.querySelector("#marcadorDePomodoros")
+const tamanhoDoCiclo = 4
 let milissegundosRestantes = 0
 let contador
 let modo = ''
@@ -21,7 +23,12 @@ disparador.addEventListener('click', () => {
             marcador.textContent = parseInt(marcador.textContent) + 1
         } else if (disparador.textContent == "Intervalo") {
             modo = "intervalo"
-            milissegundosRestantes = milissegundosIntervalo - 1000
+            if (marcador.textContent % tamanhoDoCiclo == 0) {
+                milissegundosRestantes = milissegundosIntervaloLongo
+            } else {
+                milissegundosRestantes = milissegundosIntervaloCurto
+            }
+            milissegundosRestantes -= 1000
         }
         disparador.textContent = "Pausar"
         contador = setInterval('contadorDeSegundos()', 1000);
@@ -38,13 +45,18 @@ function contadorDeSegundos() {
 
         if (modo == "pomodoro") {
             disparador.textContent = "Intervalo"
-            document.querySelector('body').style.background = "rgb(56,133,138)"
-            disparador.style.color = "rgb(56,133,138)"
+            if (marcador.textContent % tamanhoDoCiclo == 0) {
+                document.querySelector('body').style.background = "#397097"
+                disparador.style.color = "#397097"
+            } else {
+                document.querySelector('body').style.background = "#38858a"
+                disparador.style.color = "#38858a"
+            }
         } else if (modo == "intervalo") {
             disparador.textContent = "Começar"
             document.querySelector('body').style.background = "#C84949"
             disparador.style.color = "#C84949"
-        }
+        } 
 
         clearInterval(contador)
     } else {
