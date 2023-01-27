@@ -45,7 +45,7 @@ function contadorDeSegundos() {
 
         if (modo == "pomodoro") {
             disparador.textContent = "Intervalo"
-            if (marcador.textContent % tamanhoDoCiclo == 0) {
+            if (marcador.textContent == tamanhoDoCiclo) {
                 document.querySelector('body').style.background = "#397097"
                 disparador.style.color = "#397097"
             } else {
