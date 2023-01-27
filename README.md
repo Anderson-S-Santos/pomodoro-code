@@ -15,8 +15,8 @@
 - [X] Botão para pausar e retornar ao contador    
 - [X] Exibir uma contagem de pomodoros
 - [X] Depois de 4 pomodoros ativar um intervalo longo de 15min
-- [ ] Ter uma aprensentação visual melhor para o aviso de fim do pomodoro
-- [ ] Avisos sonoros para cada ínicio e fim 
+- [X] Ter uma aprensentação visual melhor para o aviso de fim do pomodoro
+- [X] Avisos sonoros para cada ínicio e fim 
 - [ ] Ativar função de ir no automático para a próxima etapa do pomodoro
 
 
