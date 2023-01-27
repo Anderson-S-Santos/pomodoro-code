@@ -23,7 +23,7 @@ disparador.addEventListener('click', () => {
             marcador.textContent = parseInt(marcador.textContent) + 1
         } else if (disparador.textContent == "Intervalo") {
             modo = "intervalo"
-            if (marcador.textContent % tamanhoDoCiclo == 0) {
+            if (marcador.textContent == tamanhoDoCiclo) {
                 milissegundosRestantes = milissegundosIntervaloLongo
             } else {
                 milissegundosRestantes = milissegundosIntervaloCurto
@@ -71,4 +71,7 @@ function formatarTempo(tempo) {
     const segundos = tempo % 60;
     return (minutos.toString().padStart(2, '0') + ":" + segundos.toString().padStart(2, '0'))
 }
+
+
+
 
