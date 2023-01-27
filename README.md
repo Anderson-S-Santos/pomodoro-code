@@ -17,7 +17,7 @@
 - [X] Depois de 4 pomodoros ativar um intervalo longo de 15min
 - [X] Ter uma aprensentação visual melhor para o aviso de fim do pomodoro
 - [X] Avisos sonoros para cada ínicio e fim 
-- [ ] Ativar função de ir no automático para a próxima etapa do pomodoro
+- [X] Ativar função de ir no automático para a próxima etapa do pomodoro
 
 
 ### Extra:
