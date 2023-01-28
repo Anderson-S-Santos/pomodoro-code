@@ -22,7 +22,7 @@
 
 ### Extra:
 
-- [X] Notificações no navegador para cada ínicio e fim
+- [ ] Notificações no navegador para cada ínicio e fim
 - [ ] Configurar a quantidade de tempo de um bloco de trabalho e um bloco de intervalo
 - [ ] Ter uma lista de tarefas executadas
 - [ ] Salvar o status no localStorage para se a aba for encerrada
