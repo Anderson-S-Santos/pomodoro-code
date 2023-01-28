@@ -1,10 +1,9 @@
-const milissegundosPomodoro = 1500000 // Usando 4 segundos para teste. Tempo oficial -> 25x60x1000
-const milissegundosIntervaloCurto = 300000 // Intervalo de 5min = 300000 milissegundos
+const milissegundosPomodoro = 4000 // Usando 4 segundos para teste. Tempo oficial -> 25x60x1000
+const milissegundosIntervaloCurto = 4000 // Intervalo de 5min = 300000 milissegundos
 const milissegundosIntervaloLongo = 900000
 const disparador = document.querySelector('#disparador')
 const cronometro = document.querySelector('#cronometro')
 const marcador = document.querySelector("#marcadorDePomodoros")
-const modoAutomatico = document.querySelector('#modoAutomatico')
 const tamanhoDoCiclo = 4
 let milissegundosRestantes = 0
 let contador
@@ -16,9 +15,7 @@ const audioInicioIntervalo = new Audio("../audio/audio_inicioIntervalo.ogg")
 const audioFimIntervalo = new Audio("../audio/audio_fimIntervalo.ogg")
 
 
-disparador.addEventListener('click', disparaContador)
-
-function disparaContador() {
+disparador.addEventListener('click', () => {
     console.log('Disparador ativado!')
 
     if (disparador.textContent == "Pausar") {
@@ -36,7 +33,7 @@ function disparaContador() {
             modo = "intervalo"
 
             audioInicioIntervalo.play()
-
+            
             if (marcador.textContent == tamanhoDoCiclo) {
                 milissegundosRestantes = milissegundosIntervaloLongo
             } else {
@@ -47,7 +44,9 @@ function disparaContador() {
         disparador.textContent = "Pausar"
         contador = setInterval('contadorDeSegundos()', 1000);
     }
-}
+
+
+})
 
 function contadorDeSegundos() {
 
@@ -72,11 +71,7 @@ function contadorDeSegundos() {
             disparador.textContent = "Começar"
             document.querySelector('body').style.background = "#C84949"
             disparador.style.color = "#C84949"
-        }
-
-        if(modoAutomatico.checked) {
-            setTimeout(disparaContador, 3000)
-        }
+        } 
 
         clearInterval(contador)
     } else {
